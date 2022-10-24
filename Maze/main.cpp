@@ -1,8 +1,8 @@
 #include <iostream>
 #include<cstdlib>
-#include<ctime>
-#include"Application.h"
-
+#include"Grid.h"
+#include<array>
+#include<vector>
 
 
 using namespace std;
@@ -10,9 +10,12 @@ using namespace std;
 
 int main()
 {
-	Application start;
-	start.run();
 
-	return 0;
+	Grid grid;
+
+	grid.generateMaze();
+	grid.printMaze();
+
+
 }
 

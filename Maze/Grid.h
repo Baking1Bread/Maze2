@@ -1,27 +1,36 @@
 #pragma once
 #include <vector>
-#include "Cell.h"
+#include<array>
+#include <iostream>
 using namespace std;
+
 class Grid
 {
 public:
-	Grid(int rows, int cols);
+
+	vector<vector<char>>grid1;
+	int num_rows = 20;
+	int num_columns = 20;
+
+
+	Grid()
+	{
+
+	};
+	Grid(int num_rows, int num_columns);
 
 	void generateMaze();
+	void printMaze();
 
-
-
+	
 
 private:
 
-	int rows;
-	int cols;
 
-	int cellWidth = 3;
-	int cellHeight = 3;
 
-	vector<Cell*> cells = NULL;
 
-	Cell* targetCell;
-	Cell* startingCell;
-}
+	
+	
+
+
+};
