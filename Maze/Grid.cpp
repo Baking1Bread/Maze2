@@ -4,48 +4,52 @@
 #include <iostream>
 using namespace std;
 
-Grid::Grid(int num_rows, int num_columns)
-{
-	this->num_rows = num_rows;
-	this->num_columns = num_columns;
 
-}
 
 void Grid::generateMaze()
 {
 
-
-	
-	
-	
-	
-	for (int i = 0; i < num_rows; i++)
+	for (int i = 0; i < 20; i++)
 	{	
-		vector<char> row;
-		
 
-		for (int j = 0; j < num_columns; j++)
+		for (int j = 0; j < 20; j++)
 		{
-			int rnd = rand() % 2;
-			if (rnd == 0) {
-				row.push_back('X');
+			int rnd = rand() % 3;
+
+			if (rnd == 1) 
+			{
+				Feld[i][j] = 'X';
 			}
-			else {
-				row.push_back(' ');
+			else if (rnd == 2) 
+			{
+				Feld[i][j] = ' ';
+			}
+			else
+			{
+				Feld[i][j] = ' ';
 			}
 		}
-
-		grid1.push_back(row);
 	}
 	
 }
 void Grid::printMaze()
 {
-	for (int i = 0; i < num_rows; i++) {
-		for (int j = 0; j < num_columns; j++) {
-			cout << grid1[i][j];// .c_str();
+	for (int i = 0; i < 20; i++) {
+		for (int j = 0; j < 20; j++) {
+
+			if (Feld[1][1])
+			{	
+				cout << Char;
+				Feld[1][1] = false;
+
+			}
+			else
+			{
+				cout << Feld[i][j];
+			}
+			
 		}
-		cout << "\n";
+		cout << endl;
 	}
 };
 
