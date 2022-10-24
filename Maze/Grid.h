@@ -8,16 +8,13 @@ class Grid
 {
 public:
 
-	vector<vector<char>>grid1;
-	int num_rows = 20;
-	int num_columns = 20;
-
+	char Feld[20][20];
+	char Char = '*';
 
 	Grid()
 	{
 
 	};
-	Grid(int num_rows, int num_columns);
 
 	void generateMaze();
 	void printMaze();
@@ -25,12 +22,6 @@ public:
 	
 
 private:
-
-
-
-
-	
-	
 
 
 };
