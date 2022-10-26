@@ -2,54 +2,99 @@
 #include<array>
 #include<vector>
 #include <iostream>
+#include<algorithm>
 using namespace std;
 
 
+Labyrinth::Labyrinth(const unsigned int rows, const unsigned int columns,int fill)
+{	
 
-void Grid::generateMaze()
-{
+	this->rows = rows;
+	this->columns = columns;
 
-	for (int i = 0; i < 20; i++)
-	{	
+	//Initialization Start x(first) & Start y(second)
+	Start.x = 0;
+	Start.y = 0;
+	End.x = columns-1;
+	End.y = rows-1;
 
-		for (int j = 0; j < 20; j++)
-		{
-			int rnd = rand() % 3;
+	for (int i = 0; i < rows; i++)
+	{
+		grid.push_back(vector<bool>());
 
-			if (rnd == 1) 
-			{
-				Feld[i][j] = 'X';
-			}
-			else if (rnd == 2) 
-			{
-				Feld[i][j] = ' ';
-			}
-			else
-			{
-				Feld[i][j] = ' ';
-			}
-		}
-	}
-	
-}
-void Grid::printMaze()
-{
-	for (int i = 0; i < 20; i++) {
-		for (int j = 0; j < 20; j++) {
+		for (int j = 0; j < columns; j++)
+		{	
 
-			if (Feld[1][1])
+			int rnd = rand() % fill;
+			if (rnd == 1)
 			{	
-				cout << Char;
-				Feld[1][1] = false;
-
+				//True = Wall
+				grid[i].push_back(true);
 			}
 			else
 			{
-				cout << Feld[i][j];
+				//False = Path
+				grid[i].push_back(false);
 			}
 			
+		}
+	}
+	grid[0][0] = false;
+	grid[columns-1][rows-1]= false;
+}
+
+void Labyrinth::search(unsigned int rows, unsigned int columns)
+{	
+	//Position Up
+	Up.x = 0;
+	Up.y = +1;
+	//Position Down
+	Down.x = 0;
+	Down.y = -1;
+	//Position Left
+	Left.x = -1;
+	Left.y = 0;
+	//Position Right
+	Right.x = +1;
+	Right.y = 0;
+
+
+};
+
+void Labyrinth::getneighbours()
+{
+	for ()
+	{
+
+	}
+};
+
+void Labyrinth::printMaze()
+{	
+	for (int x = 0; x < rows; x++) 
+	{
+		for (int y = 0; y < columns; y++)
+		{	
+			if (Start.x == x && Start.y == y)
+			{
+				cout << "S";
+			}
+			else if (End.x == x && End.y == y)
+			{
+				cout << "E";
+			}
+			else if (grid[x][y] == true)
+			{
+				cout << "x";
+			}
+			else
+			{
+				cout << " ";
+			}
 		}
 		cout << endl;
 	}
 };
+
+
 

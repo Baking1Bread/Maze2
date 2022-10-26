@@ -11,9 +11,8 @@ using namespace std;
 int main()
 {
 
-	Grid grid;
-
-	grid.generateMaze();
+	Labyrinth grid(20,20, 10);
+	
 	grid.printMaze();
 
 
