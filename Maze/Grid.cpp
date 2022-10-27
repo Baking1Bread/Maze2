@@ -44,30 +44,82 @@ Labyrinth::Labyrinth(const unsigned int rows, const unsigned int columns,int fil
 }
 
 void Labyrinth::search(unsigned int rows, unsigned int columns)
-{	
-	//Position Up
-	Up.x = 0;
-	Up.y = +1;
-	//Position Down
-	Down.x = 0;
-	Down.y = -1;
-	//Position Left
-	Left.x = -1;
-	Left.y = 0;
-	//Position Right
-	Right.x = +1;
-	Right.y = 0;
-
-
-};
-
-void Labyrinth::getneighbours()
 {
-	for ()
-	{
 
-	}
+	bool pathblocked;
+	bool Exitfound = false;
+
+	//Check Up
+	do {
+		for ( )//grid[Opos.x][Opos.y], grid[Npos.newX][Npos.newY])
+		{
+			if (grid[0][+1] == true) //Wall
+			{
+				pathblocked = true;
+				deadends.push_back(deadend);
+			}
+			else if (grid[0][+1] == false)//Path
+			{
+				pathblocked = false;
+				paths.emplace_back();
+				paths.back().push_back(path);
+				return;
+			}
+			else 
+			{	
+				if (grid[0][+1] == grid[columns - 1][rows - 1])//End
+					Exitfound = true;
+			}
+			//Check Down
+			if (grid[0][-1] == true) //Wall
+			{
+				pathblocked = true;
+				deadends.push_back(deadend);
+			}
+			else if (grid[0][+1] == false)//Path
+			{
+				pathblocked = false;
+			}
+			else
+			{
+				if (grid[0][+1] == grid[columns - 1][rows - 1])//End
+					Exitfound = true;
+			}
+			//Check Left
+			if (grid[-1][0] == true) //Wall
+			{
+				pathblocked = true;
+				deadends.push_back(deadend);
+			}
+			else if (grid[0][+1] == false)//Path
+			{
+				pathblocked = false;
+			}
+			else
+			{
+				if (grid[0][+1] == grid[columns - 1][rows - 1])//End
+					Exitfound = true;
+			}
+			//Check Right
+			if (grid[+1][0] == true) //Wall
+			{
+				pathblocked = true;
+				deadends.push_back(deadend);
+			}
+			else if (grid[0][+1] == false)//Path
+			{
+				pathblocked = false;
+			}
+			else
+			{
+				if (grid[0][+1] == grid[columns - 1][rows - 1])//End
+					Exitfound = true;
+			}
+		}
+	} while (!Exitfound);
 };
+
+
 
 void Labyrinth::printMaze()
 {	

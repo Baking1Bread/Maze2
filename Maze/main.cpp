@@ -10,11 +10,7 @@ using namespace std;
 
 int main()
 {
-
-	Labyrinth grid(20,20, 10);
-	
+	Labyrinth grid(20,20, 10);	
 	grid.printMaze();
-
-
 }
 
