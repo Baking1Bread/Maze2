@@ -9,8 +9,14 @@ using namespace std;
 
 
 int main()
-{
-	Labyrinth grid(20,20, 10);	
-	grid.printMaze();
+{	
+	Labyrinth lab;
+	lab.printArrayMaze();
+	cout << endl;
+	lab.solveMaze();
+	
+	
+
+
 }
 
