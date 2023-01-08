@@ -11,17 +11,18 @@ using namespace std;
 class Grid
 {
 public:
-	Grid(int N, int M);
+	Grid(int Height, int Width);
 	void printGrid();
-	int getN() { return N; }
-	int getM() { return M; }
+	int getHeight() { return Height; }
+	int getWidth() { return Width; }
+	bool* getGrid() { return grid; }
 	int getPosition();
 private:
 
 	//N -- Number of Lines
-	int N;
+	int Height;
 	//M -- Number of Columns
-	int M;
+	int Width;
 
 	bool* grid;
 };

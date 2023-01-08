@@ -10,12 +10,12 @@ using namespace std;
 
 
 int main()
-{	
-	Grid lab(10, 10);
+{
+	Grid lab(9, 9);
 	lab.printGrid();
+	
 	Solve solve;
 	solve.DFS(lab);
 
 
 }
-
