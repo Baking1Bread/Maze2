@@ -18,18 +18,18 @@
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Grid.cpp">
+    <ClCompile Include="Maze.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Node.cpp">
+    <ClCompile Include="Solve.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Grid.h">
+    <ClInclude Include="Maze.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
+    <ClInclude Include="Solve.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

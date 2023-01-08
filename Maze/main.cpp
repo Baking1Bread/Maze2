@@ -1,6 +1,7 @@
 #include <iostream>
 #include<cstdlib>
-#include"Grid.h"
+#include"Maze.h"
+#include"Solve.h"
 #include<array>
 #include<vector>
 
@@ -10,12 +11,10 @@ using namespace std;
 
 int main()
 {	
-	Labyrinth lab;
-	lab.printArrayMaze();
-	cout << endl;
-	lab.solveMaze();
-	
-	
+	Grid lab(10, 10);
+	lab.printGrid();
+	Solve solve;
+	solve.DFS(lab);
 
 
 }
