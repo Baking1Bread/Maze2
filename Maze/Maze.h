@@ -15,7 +15,8 @@ public:
 	void printGrid();
 	int getHeight() { return Height; }
 	int getWidth() { return Width; }
-	bool* getGrid() { return grid; }
+	//bool* getGrid() { return grid; }
+	vector<bool>& getGrid() { return grid; }
 	int getPosition();
 private:
 
@@ -24,5 +25,7 @@ private:
 	//M -- Number of Columns
 	int Width;
 
-	bool* grid;
+	vector<bool> grid;
+
+	//bool* grid;
 };
