@@ -24,12 +24,18 @@
     <ClCompile Include="Solve.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Save.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Maze.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Solve.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Save.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,21 +1,24 @@
-#include"Maze.h"
-#include<array>
+
+#include "Maze.h"
+#include <array>
 #include <iostream>
-#include<vector>
-#include<stdlib.h>
-#include<algorithm>
+#include <stdlib.h>
+#include <stdio.h>
+#include <algorithm>
+#include <fstream>
+#include <iomanip>
+#include <time.h>
 using namespace std;
 
 
 
 Grid::Grid(int Height, int Width) :Height(Height), Width(Width)
 {
-	int z = Height * Width;
-
-	grid.resize(z);
+	int z = (Height * Width);
+	grid = new bool[z];
 
 	//Set all to Paths
-	fill(grid.begin(), grid.end(), true);
+	memset(grid, true, z);
 
 	//srand-time creates a Seed for our rand
 	//When using srand with time we get a random maze everytime
@@ -27,8 +30,8 @@ Grid::Grid(int Height, int Width) :Height(Height), Width(Width)
 
 	for (int i = 0; i < p; i++)
 	{
-		//0 or false = Wall
-		grid[rand() % z] = false;
+		//0 = Wall
+		grid[rand() % z] = 0;
 	}
 	grid[z - 1] = true;	//End
 	grid[z - z] = true;	//Start
@@ -55,4 +58,6 @@ void Grid::printGrid()
 		cout << endl;
 	}
 	cout << endl;
+
+	
 }

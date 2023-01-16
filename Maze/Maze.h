@@ -1,9 +1,12 @@
 #pragma once
-#include<cstring>
-#include<vector>
-#include<array>
-#include<iostream>
-#include<list>
+#include <array>
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <algorithm>
+#include <fstream>
+#include <iomanip>
+#include <time.h>
 
 using namespace std;
 
@@ -13,10 +16,9 @@ class Grid
 public:
 	Grid(int Height, int Width);
 	void printGrid();
-	int getHeight() { return Height; }
-	int getWidth() { return Width; }
-	//bool* getGrid() { return grid; }
-	vector<bool>& getGrid() { return grid; }
+	int getHeight() const { return Height; }
+	int getWidth() const { return Width; }
+	bool* getGrid() const { return grid; }
 	int getPosition();
 private:
 
@@ -25,7 +27,5 @@ private:
 	//M -- Number of Columns
 	int Width;
 
-	vector<bool> grid;
-
-	//bool* grid;
+	bool* grid;
 };

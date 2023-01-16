@@ -3,6 +3,8 @@
 #include<array>
 #include <iostream>
 #include<algorithm>
+#include <fstream>
+#include<iomanip>
 using namespace std;
 
 
@@ -12,12 +14,16 @@ void Solve::printSolution(int Width, int Height)
 	//For-Loop to print our Solution-Path
 	for (int i = 0; i < Height; i++)
 	{
+
 		for (int j = 0; j < Width; j++)
 		{
-			cout << sol[i * Width + j];
+			cout<< sol[i * Width + j];
 		}
 		cout << endl;
 	}
+	cout << endl;
+
+
 }
 
 bool Solve::DFS(Grid& lab)
@@ -25,8 +31,7 @@ bool Solve::DFS(Grid& lab)
 	lab.getWidth();
 	lab.getHeight();
 
-	//Scale up Solve Grid
-	sol.resize(lab.getWidth() * lab.getHeight());
+	sol = new bool[lab.getWidth()*lab.getHeight()];
 
 	//Solving Grid
 	//int sol[N][M];
@@ -56,7 +61,7 @@ bool Solve::isSafe(int x, int y,Grid& lab)
 {
 	//if (x,y) is outside of the maze return false
 	//This Method prevents our Solve Method to go out of Bounds
-	
+	bool* gridd = lab.getGrid();
 	if (x >= 0 && x < lab.getWidth() && y >= 0 && y < lab.getHeight() && lab.getGrid()[y * lab.getWidth() + x] == 1)
 	{
 		return true;
@@ -68,7 +73,7 @@ bool Solve::solveMazeUtil(int x, int y, Grid& lab)
 {	
 	int index = y * lab.getWidth() + x;
 
-	//Check for Goal
+	//Check for Goal, -1 because Arrays start at 0
 	if (index == lab.getWidth()*lab.getHeight()-1)
 	{
 		sol[index] = 1;
